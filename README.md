@@ -78,6 +78,12 @@ Paste this XML request in **Body (raw)**:
    </soapenv:Body>
 </soapenv:Envelope>
 ```
+## 📷 Results
+### REST API Test
+![REST API Result](https://github.com/user-attachments/assets/e4057f6e-97e0-4a0b-931c-1e2d2ca2f50a)
+
+### SOAP API Test
+![SOAP API Result](https://github.com/user-attachments/assets/c8d83655-41d3-419f-8ec6-2614f2e83e19)
 
 ---
 
