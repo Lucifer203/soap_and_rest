@@ -1,4 +1,3 @@
-```markdown
 # Calculator API Service (SOAP & REST)
 This is a dual-implementation calculator service providing both **SOAP** and **REST** endpoints. The service performs basic arithmetic operations (addition, subtraction, multiplication, and division) and can be tested using **Postman** or any API testing tool.
 
