@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions name="MathService"
+    targetNamespace="http://www.example.org/mathservice/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://www.example.org/mathservice/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+  <message name="calculateRequest">
+    <part name="num1" type="xsd:float"/>
+    <part name="num2" type="xsd:float"/>
+    <part name="operation" type="xsd:string"/>
+  </message>
+  <message name="calculateResponse">
+    <part name="result" type="xsd:float"/>
+  </message>
+  
+  <portType name="MathServicePortType">
+    <operation name="calculate">
+      <input message="tns:calculateRequest"/>
+      <output message="tns:calculateResponse"/>
+    </operation>
+  </portType>
+  
+  <binding name="MathServiceSoapBinding" type="tns:MathServicePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="calculate">
+      <soap:operation soapAction="calculate"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:MathService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:MathService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  
+  <service name="MathService">
+    <documentation>Math Service</documentation>
+    <port name="MathServiceSoapPort" binding="tns:MathServiceSoapBinding">
+      <soap:address location="http://localhost:8001/wsdl"/>
+    </port>
+  </service>
+</definitions>

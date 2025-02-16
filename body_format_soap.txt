@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:math="math.service.soap">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <math:calculate>
+         <math:num1>{your_number_here }</math:num1>
+         <math:num2>{your_number_here }</math:num2>
+         <math:operation>{operation types: add,subtract,divide,multiply}</math:operation>
+      </math:calculate>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
